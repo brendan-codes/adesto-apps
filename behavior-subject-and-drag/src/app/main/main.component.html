@@ -1,0 +1,17 @@
+<div class='tray' cdkDragBoundary='.tray'>
+    <div class='wide-box'>
+        <button (click)="subtract()">-</button>
+        <b>Count:</b> {{ count }}
+        <button (click)="add()">+</button>
+        <button (click)="reset()">Reset</button>
+        <hr>
+        <div>
+            <button (click)='createCounter()'>Create New Counter!</button>
+            <button (click)='resetCounters()'>Reset Counter Windows!</button>
+        </div>
+    </div>
+</div>
+
+<div class='playground'>
+    <app-counter *ngFor="let c of counters"></app-counter>
+</div>

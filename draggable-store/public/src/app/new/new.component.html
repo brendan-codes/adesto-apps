@@ -1,0 +1,44 @@
+<button [routerLink]="['/']">Cancel</button>
+<hr>
+<p><b>Create</b> a new <b>product</b>!</p>
+<div *ngFor="let error of errors">
+    <p>{{ error.path }}: {{ error.message }}</p>
+</div>
+
+<form (submit)="createProduct()" #thisForm="ngForm">
+    <div>
+        Name: <input
+        type="text"
+        name="name"
+        [(ngModel)]="newProduct.name"
+        required
+        minlength="3"
+        #name="ngModel"
+        />
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+            Name must be at least 3 characters long.
+        </div>
+    </div>
+    <div>
+        Quantity: <input
+        type="number"
+        name="quantity"
+        [(ngModel)]="newProduct.quantity"
+        required
+        />
+    </div>
+    <div>
+        Price: <input
+        type="number"
+        name="price"
+        [(ngModel)]="newProduct.price"
+        required
+        />
+    </div>
+    <input type="submit" [disabled]="thisForm.invalid" value="Create!">
+</form>

@@ -1,0 +1,21 @@
+<button [routerLink]="['/products/new']">Create Record</button>
+
+<table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product._id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>${{product.price}}</td>
+            <td>
+                <button routerLink='/products/{{product._id}}/edit'>Edit</button>
+                <button routerLink='/products/{{product._id}}'>Details</button>
+            </td>
+        </tr>
+</table>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+
+            var socket = io(); //1
+
+            socket.on('greeting', function (data) { //4
+                console.log(data.msg); //5
+            });
+         })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Show all Surveys!</h1>
+    <a href="/survey/new">Create!</a>
+
+    <% for(let survey of surveys){ %>
+
+        <hr>
+        <p>Name: <%= survey.name %></p>
+        <p>email: <%= survey.email %></p>
+        <p>age: <%= survey.age %></p>
+        <a href="/survey/<%= survey._id %>/edit">Edit Survey</a>
+        <form action="/survey/<%= survey._id %>/delete" method="POST">
+            <input type="submit" value="Delete!">
+        </form>
+        <!-- <a href="/survey/<%= survey._id %>/delete">Delete Survey</a> -->
+
+    <% } %>
+
+
+</body>
+</html>

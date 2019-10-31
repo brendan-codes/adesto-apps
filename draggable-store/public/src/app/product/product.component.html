@@ -1,0 +1,9 @@
+<button [routerLink]="['/']">Back</button>
+<hr>
+
+<h5>Product Details</h5>
+<p><b>Name</b>: {{ oneProduct.name }}</p>
+<p><b>Quantity</b>: {{ oneProduct.quantity }}</p>
+<p><b>Price</b>: {{ oneProduct.price }}</p>
+
+<button [disabled]="hasProducts" (click)="deleteProduct(oneProduct._id)">Delete</button>

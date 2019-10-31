@@ -1,0 +1,23 @@
+<div *ngFor="let error of errors">
+   <p style="color: red"> {{ error }} </p>
+</div>
+
+{{ success }}
+
+<form (submit)="createTask()">
+
+    <input type="text" name="newTask.title" [(ngModel)]="newTask.title">
+    <input type="text" name="newTask.desc" [(ngModel)]="newTask.desc">
+    <input type="submit" value="Create new Task">
+
+</form>
+
+<div *ngFor="let task of tasks">
+    <span>title: {{ task.title }} </span>
+    <br>
+    <span>desc: {{ task.desc }} </span>
+    <form (submit)="deleteTask(task._id)">
+        <input type="submit" value="Delete this task!">
+    </form>
+    <hr>
+</div>

@@ -1,0 +1,23 @@
+<!-- <div *ngFor="let error of errors">
+  <p>{{ error.path }}</p>
+  <p>{{ error.message }}</p>
+</div>
+
+<div>
+  Name (required): <input type="text" [(ngModel)]="newWitch.name"><br>
+  Broom: <input type="text" [(ngModel)]="newWitch.broom"><br>
+  Coven (required): <input type="text" [(ngModel)]="newWitch.coven"><br>
+  <input (click)="submitWitch()" type="submit" value="New Witch">
+</div>
+
+
+<div *ngFor="let witch of witches">
+  <p>name: {{ witch.name }}</p>
+  <p>broom: {{ witch.broom }}</p>
+  <p>coven: {{ witch.coven }}</p>
+  <button (click)="deleteWitch(witch._id)">Delete {{ witch.name }}!</button>
+</div> -->
+
+<button [routerLink]="['/home']">Home</button>
+<button [routerLink]="['/create']">Create</button>
+<router-outlet></router-outlet>

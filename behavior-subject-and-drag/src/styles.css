@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+    .box {
+        width: 25%;
+        display: inline-block;
+        border: 1px dotted black;
+        background-color: white;
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .wide-box {
+        width: 80%;
+        display: inline-block;
+        border: 1px dotted black;
+        background-color: white;
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .tray {
+        text-align: center;
+        display: block;
+        border: 1px dotted black;
+    }
+
+    .playground {
+        text-align: center;
+        display: block;
+        border: 1px dotted black;
+        margin: 1em;
+        /* height: 90%;
+        width: 90%; */
+    }
+
+    .boundry {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

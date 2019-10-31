@@ -1,0 +1,15 @@
+<tr>
+    <td>{{oneProduct._id}}</td>
+    <td>{{oneProduct.name}}</td>
+    <td>
+        <form (submit)="changeQuantity()">
+            <input type="number" name="quantity" [(ngModel)]="oneProduct.quantity" value={{oneProduct.quantity}}>
+            <input type="submit" value="Change!">
+        </form>
+    </td>
+    <td>${{oneProduct.price}}</td>
+    <td>
+        <button routerLink='/product/{{oneProduct._id}}/edit'>Edit</button>
+        <button (click)='goToDetails(oneProduct)'>Details</button>
+    </td>
+</tr>
